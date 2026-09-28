@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4e5c7">
+  <title>Camel’s Code Quest</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <div class="brand-mark" aria-hidden="true">✦</div>
+      <div><p class="eyebrow">DESERT CODING CLUB</p><h1>Codie’s Code Quest</h1></div>
+      <div class="level-pill"><span class="level-dot"></span> LEVEL 1 <span>·</span> THE LONG WAY TO SCHOOL</div>
+    </header>
+
+    <section class="intro">
+      <div><p class="eyebrow">YOUR MISSION</p><h2>Help Codie get to school!</h2><p>Build a block program to guide Codie across the desert. Watch out for the prickly cacti!</p></div>
+    </section>
+
+    <div class="play-layout">
+      <section class="board-panel panel" aria-label="Game board">
+        <div class="panel-heading"><div><span class="step-label">01 / THE DESERT</span><h3>Choose a safe path</h3></div><span class="grid-legend"><i></i> 4 × 4 GRID</span></div>
+        <div id="grid" class="grid" role="grid" aria-label="4 by 4 desert grid"></div>
+        <div class="board-footer"><span>🚩 START <b>Bottom left</b></span><span>🎒 GOAL <b>Top right</b></span><span>🌵 OBSTACLE</span></div>
+      </section>
+
+      <section class="code-panel panel" aria-label="Code blocks">
+        <div class="panel-heading"><div><span class="step-label">02 / YOUR PROGRAM</span><h3>Build your code</h3></div><button id="clearButton" class="text-button" type="button">Clear all</button></div>
+        <div class="toolbox" aria-label="Add a code block">
+          <button class="tool forward-tool" data-add="forward" type="button"><span class="tool-icon">↑</span><span><strong>Move forward</strong><small>Take one step</small></span><span class="plus">+</span></button>
+          <button class="tool left-tool" data-add="left" type="button"><span class="tool-icon">↶</span><span><strong>Turn left</strong><small>Turn 90° left</small></span><span class="plus">+</span></button>
+          <button class="tool right-tool" data-add="right" type="button"><span class="tool-icon">↷</span><span><strong>Turn right</strong><small>Turn 90° right</small></span><span class="plus">+</span></button>
+          <button class="tool repeat-tool" id="addRepeat" type="button"><span class="tool-icon">⟳</span><span><strong>Repeat</strong><small>Repeat a sequence</small></span><span class="plus">+</span></button>
+        </div>
+        <div class="program-heading"><span>YOUR BLOCKS</span><span id="blockCount">0 BLOCKS</span></div>
+        <div id="program" class="program" aria-live="polite"></div>
+        <div class="run-row"><div class="run-hint"><span>✦</span> Ready when you are!</div><button id="runButton" class="run-button" type="button"><span>▶</span> RUN PROGRAM</button></div>
+      </section>
+    </div>
+    <footer><span>DESERT CODING CLUB</span><span>Think it. Code it. Get Codie to class. ✦</span></footer>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
